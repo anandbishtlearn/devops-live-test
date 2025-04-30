@@ -1,4 +1,4 @@
-# Base image
+# Base images
 FROM nginx:alpine
 
 # Copy your HTML file to nginx html folder
