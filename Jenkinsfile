@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/anandbishtlearn/devops-live-test.git'
             }
         }
         stage('Build Image') {
