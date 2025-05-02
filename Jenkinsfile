@@ -6,11 +6,7 @@ pipeline {
         BLUE_PORT = '8082'
     }
     stages {
-        stage('Checkout') {
-            steps {
-            }
-        }
-        stage('Build Image') {
+            stage('Build Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME .'
             }
