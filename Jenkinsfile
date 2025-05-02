@@ -21,7 +21,7 @@ pipeline {
                             docker stop blue || true
                             docker rm blue || true
                             docker run -d --name blue -p ${BLUE_PORT}:80 $IMAGE_NAME
-                            sudo sed -i 's/${GREEN_PORT}/${BLUE_PORT}/' /etc/nginx/sites-available/default
+                            sudo sed -i 's/PORT/8082/' /etc/nginx/sites-available/default
                             sudo systemctl reload nginx
                         '''
                     } else {
@@ -30,7 +30,7 @@ pipeline {
                             docker stop green || true
                             docker rm green || true
                             docker run -d --name green -p ${GREEN_PORT}:80 $IMAGE_NAME
-                            sudo sed -i 's/${BLUE_PORT}/${GREEN_PORT}/' /etc/nginx/sites-available/default
+                            sudo sed -i 's/PORT/8081/' /etc/nginx/sites-available/default
                             sudo systemctl reload nginx
                         '''
                     }
